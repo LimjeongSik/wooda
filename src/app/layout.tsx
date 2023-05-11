@@ -1,7 +1,7 @@
 import BasicLayout from "@/components/BasicLayout";
 import StyledComponentsRegistry from "@/lib/styledComponents";
 import { GlobalStyle } from "@/styles/GlobalStyle";
-import Head from "next/head";
+import { Fontspring, Pretendard } from "@/styles/Fonts";
 
 export const metadata = {
     title: "Woo-da",
@@ -14,7 +14,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="ko">
+        <html
+            lang="ko"
+            className={`${Pretendard.variable} ${Fontspring.variable}`}
+        >
             <head>
                 <link
                     rel="apple-touch-icon"

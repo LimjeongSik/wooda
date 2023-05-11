@@ -35,6 +35,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: var(--pretendard);
+}
+h1 {
+	font-family: var(--fontspring);
 }
 ol, ul {
 	list-style: none;
