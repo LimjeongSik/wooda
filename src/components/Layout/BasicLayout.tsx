@@ -1,12 +1,9 @@
 "use client";
 
 import { styled } from "styled-components";
+import { ChildProps } from "@/interface/Interface";
 
-interface BasicLayoutProps {
-    children: React.ReactNode;
-}
-
-export default function BasicLayout({ children }: BasicLayoutProps) {
+export default function BasicLayout({ children }: ChildProps) {
     return <Block>{children}</Block>;
 }
 

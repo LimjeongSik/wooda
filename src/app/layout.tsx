@@ -1,4 +1,4 @@
-import BasicLayout from "@/components/BasicLayout";
+import BasicLayout from "@/components/Layout/BasicLayout";
 import StyledComponentsRegistry from "@/lib/styledComponents";
 import { GlobalStyle } from "@/styles/GlobalStyle";
 import { Fontspring, Pretendard } from "@/styles/Fonts";
