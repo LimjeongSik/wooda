@@ -1,3 +1,5 @@
+"use client";
+
 export const Colors = {
     white: "#f5f5f5",
     line: "#e2e2e2",

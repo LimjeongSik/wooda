@@ -3,6 +3,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+* {
+	box-sizing: border-box;
+}
 html,body {
     width:100%;
     height:100%;
@@ -28,6 +31,9 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+html {
+	font-size:0.052083vw;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -37,7 +43,7 @@ body {
 	line-height: 1;
 	font-family: var(--pretendard);
 }
-h1 {
+.fontspring {
 	font-family: var(--fontspring);
 }
 ol, ul {
