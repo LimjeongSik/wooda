@@ -99,9 +99,9 @@ export default function RootLayout({
             </head>
             <body>
                 <StyledComponentsRegistry>
-                    <GlobalStyle />
+                    <Header />
                     <BasicLayout>
-                        <Header />
+                        <GlobalStyle />
                         {children}
                     </BasicLayout>
                 </StyledComponentsRegistry>

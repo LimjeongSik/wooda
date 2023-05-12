@@ -42,6 +42,7 @@ const HeaderBlock = styled.div`
     height: 105px;
     padding: 0 80rem;
     background-color: ${Colors.white};
+    z-index: 9999;
 `;
 const HeaderInner = styled.div`
     width: 100%;
