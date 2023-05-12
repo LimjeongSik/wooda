@@ -41,7 +41,12 @@ export default function Main() {
                         mixTitle="IO"
                         classname="absolute-block"
                     />
-                    <Image src={Profile} alt="profile" />
+                    <Image
+                        src={Profile}
+                        width={300}
+                        height={300}
+                        alt="profile"
+                    />
                     <ProfileContent>
                         <div className="left-column">
                             <strong>for Design</strong>
@@ -142,7 +147,7 @@ const ProfileContent = styled.div`
             font-size: 17rem;
             line-height: 26rem;
             color: ${Colors.black};
-            font-weight: 200;
+            font-weight: 300;
             margin-top: 24rem;
             margin-bottom: 44rem;
         }
