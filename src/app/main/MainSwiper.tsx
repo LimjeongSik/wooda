@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 import { ProjectContext } from "@/context/ProjectContext";
 import { ProjectDataProps } from "@/interface/Interface";
 import { project } from "@/data/project";
+import Link from "next/link";
 
 const options = {
     slidesPerView: 4.5,
@@ -25,6 +26,7 @@ const options = {
     } as PaginationOptions,
     navigation: true,
     modules: [Pagination, Navigation],
+    touchStartPreventDefault: false,
 };
 
 export default function MainSwiper() {
@@ -38,7 +40,11 @@ export default function MainSwiper() {
                     {isData.map((data: ProjectDataProps) => (
                         <SwiperSlide key={data.id}>
                             <DataBlock>
-                                <Image src={data.image} alt={data.name} />
+                                <Image
+                                    src={data.image}
+                                    alt={data.name}
+                                    priority
+                                />
                                 <h2>{data.name}</h2>
                                 <p>{data.classification}</p>
                             </DataBlock>
@@ -99,6 +105,7 @@ const DataBlock = styled.div`
     img {
         width: 362rem;
         height: 504rem;
+        pointer-events: none;
     }
 
     h2 {
