@@ -8,3 +8,8 @@ export interface MixTitleProps {
     subTitle?: string | undefined;
     classname?: string | undefined;
 }
+
+export interface MouseMoveEventProsp {
+    x: number;
+    y: number;
+}

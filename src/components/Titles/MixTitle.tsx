@@ -30,7 +30,7 @@ const Block = styled.div`
             font-size: 230rem;
             color: ${Colors.black};
             letter-spacing: -2.22px;
-            font-weight: 400;
+            font-weight: 300;
             font-family: var(--pretendard);
             margin-left: 0;
         }

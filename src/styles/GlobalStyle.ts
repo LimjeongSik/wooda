@@ -30,6 +30,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	cursor: none;
 }
 html {
 	font-size:0.052083vw;
