@@ -22,3 +22,8 @@ export interface ProjectDataProps {
     classification: string;
     image: StaticImageData;
 }
+
+export interface ProjectContextProps {
+    isData: ProjectDataProps[];
+    setIsData: React.Dispatch<React.SetStateAction<ProjectDataProps[]>>;
+}

@@ -1,7 +1,9 @@
+import { useContext, useState } from "react";
 import Image from "next/image";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { PaginationOptions } from "swiper/types";
+import MainSwiperTab from "./MainSwiperTab";
 
 import { styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
@@ -10,8 +12,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // data
-import { project } from "@/data/project";
+import { ProjectContext } from "@/context/ProjectContext";
 import { ProjectDataProps } from "@/interface/Interface";
+import { project } from "@/data/project";
 
 const options = {
     slidesPerView: 4.5,
@@ -25,31 +28,69 @@ const options = {
 };
 
 export default function MainSwiper() {
+    const [isData, setIsData] = useState<ProjectDataProps[]>(project);
+
     return (
-        <Block>
-            <Swiper {...options} className="mySwiper">
-                {project.map((data: ProjectDataProps) => (
-                    <SwiperSlide key={data.id}>
-                        <DataBlock>
-                            <Image
-                                src={data.image}
-                                width={362}
-                                height={504}
-                                alt={data.name}
-                            />
-                            <h2>{data.name}</h2>
-                            <p>{data.classification}</p>
-                        </DataBlock>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </Block>
+        <ProjectContext.Provider value={{ isData, setIsData }}>
+            <Block>
+                <MainSwiperTab />
+                <Swiper {...options} className="mySwiper">
+                    {isData.map((data: ProjectDataProps) => (
+                        <SwiperSlide key={data.id}>
+                            <DataBlock>
+                                <Image src={data.image} alt={data.name} />
+                                <h2>{data.name}</h2>
+                                <p>{data.classification}</p>
+                            </DataBlock>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </Block>
+        </ProjectContext.Provider>
     );
 }
 
 const Block = styled.div`
     padding-left: 140rem;
-    padding-bottom: 216rem;
+    padding-bottom: 332rem;
+    .mySwiper {
+        padding-bottom: 216rem;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 56rem;
+            height: 56rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            top: auto;
+            bottom: 39rem;
+            cursor: none;
+        }
+
+        .swiper-button-prev {
+            background-image: url("/images/btns/btn_prev.png");
+            left: 0;
+        }
+        .swiper-button-next {
+            background-image: url("/images/btns/btn_next.png");
+            right: auto;
+            left: 76rem;
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            display: none;
+        }
+        .swiper-pagination-progressbar {
+            top: auto;
+            bottom: 0;
+            background-color: ${Colors.line};
+
+            .swiper-pagination-progressbar-fill {
+                background-color: ${Colors.black};
+            }
+        }
+    }
 `;
 const DataBlock = styled.div`
     display: flex;

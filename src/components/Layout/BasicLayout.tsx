@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
 
 import { ChildProps, MouseMoveEventProsp } from "@/interface/Interface";
