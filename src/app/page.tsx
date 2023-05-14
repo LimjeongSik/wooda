@@ -10,6 +10,7 @@ import { Colors } from "@/styles/Colors";
 import Mark from "/public/images/icons/icon_mark.png";
 import Profile from "/public/images/bg/bg_profile.png";
 import Arrow from "/public/images/icons/icon_down_arrow.png";
+import MainSwiper from "./main/MainSwiper";
 
 export default function Main() {
     return (
@@ -72,6 +73,7 @@ export default function Main() {
             <ArrowBlock>
                 <Image src={Arrow} alt="더보기" />
             </ArrowBlock>
+            <MainSwiper />
         </Block>
     );
 }
