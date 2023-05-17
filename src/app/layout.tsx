@@ -100,8 +100,8 @@ export default function RootLayout({
             </head>
             <body>
                 <StyledComponentsRegistry>
+                    <GlobalStyle />
                     <BasicLayout>
-                        <GlobalStyle />
                         <Header />
                         {children}
                         <Footer />

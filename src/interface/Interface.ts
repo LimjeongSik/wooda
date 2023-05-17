@@ -4,6 +4,15 @@ export interface ChildProps {
     children: React.ReactNode;
 }
 
+export interface BlockTemplateProps extends ChildProps {
+    styles: {
+        paddingLeft?: string;
+        paddingRight?: string;
+        paddingTop?: string;
+        paddingBottom?: string;
+    };
+}
+
 export interface MixTitleProps {
     title: string;
     mixTitle: string;

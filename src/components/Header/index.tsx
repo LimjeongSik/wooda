@@ -1,16 +1,41 @@
 "use client";
 
-import { styled } from "styled-components";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { throttle } from "lodash";
+
+import { css, styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
 
 import Logo from "/public/images/icons/icon_logo.png";
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const beforeScrollY = useRef(0);
+
+    const onScroll = useMemo(
+        () =>
+            throttle(() => {
+                const currentScrollY = window.scrollY;
+                if (beforeScrollY.current <= currentScrollY) {
+                    setIsMenuOpen(true);
+                } else {
+                    setIsMenuOpen(false);
+                }
+                beforeScrollY.current = currentScrollY;
+            }, 250),
+        [],
+    );
+
+    useEffect(() => {
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [onScroll, isMenuOpen]);
+
     return (
         <>
-            <HeaderBlock>
+            <HeaderBlock $os={isMenuOpen}>
                 <HeaderInner>
                     <HeaderLogo>
                         <Link href="/">
@@ -34,7 +59,7 @@ export default function Header() {
     );
 }
 
-const HeaderBlock = styled.div`
+const HeaderBlock = styled.div<{ $os: boolean }>`
     position: fixed;
     left: 0;
     top: 0;
@@ -43,6 +68,13 @@ const HeaderBlock = styled.div`
     padding: 0 80rem;
     background-color: ${Colors.white};
     z-index: 9999;
+    transition: all 0.2s ease-in-out;
+
+    ${(props) =>
+        props.$os &&
+        css`
+            transform: translateY(-105px);
+        `}
 `;
 const HeaderInner = styled.div`
     width: 100%;

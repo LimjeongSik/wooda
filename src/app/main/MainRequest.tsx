@@ -1,12 +1,17 @@
+"use client";
+
 import { styled } from "styled-components";
 import Image from "next/image";
 
 import Arrow from "/public/images/icons/icon_fill_arrow.png";
 import { Colors } from "@/styles/Colors";
+import BlockTemplate from "@/components/Template/BlockTemplate";
 
 export default function MainRequest() {
     return (
-        <Block>
+        <BlockTemplate
+            styles={{ paddingLeft: "307rem", paddingRight: "80rem" }}
+        >
             <RequestContent>
                 <strong>
                     FEEL FREE
@@ -19,15 +24,10 @@ export default function MainRequest() {
                 </strong>
                 <Image src={Arrow} alt="request" />
             </RequestContent>
-        </Block>
+        </BlockTemplate>
     );
 }
 
-const Block = styled.div`
-    width: 100%;
-    padding-left: 307rem;
-    padding-right: 80rem;
-`;
 const RequestContent = styled.div`
     display: flex;
     flex-direction: column;
