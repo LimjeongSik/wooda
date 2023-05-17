@@ -11,6 +11,7 @@ import Mark from "/public/images/icons/icon_mark.png";
 import Profile from "/public/images/bg/bg_profile.png";
 import Arrow from "/public/images/icons/icon_down_arrow.png";
 import MainSwiper from "./main/MainSwiper";
+import MainRequest from "./main/MainRequest";
 
 export default function Main() {
     return (
@@ -74,19 +75,22 @@ export default function Main() {
                 <Image src={Arrow} alt="더보기" />
             </ArrowBlock>
             <MainSwiper />
+            <MainRequest />
         </Block>
     );
 }
 
 const Block = styled.main`
-    padding-left: 80rem;
+    padding-bottom: 44rem;
     background-color: ${Colors.white};
 `;
 const TitleBlock = styled.div`
+    padding-left: 80rem;
     position: relative;
     margin-top: -33rem;
 `;
 const MarkBlock = styled.div`
+    padding-left: 80rem;
     margin-top: 204rem;
     & > img {
         width: 66rem;
@@ -101,9 +105,11 @@ const MarkBlock = styled.div`
     }
 `;
 const MyProfileBlock = styled.div`
+    padding-left: 80rem;
     padding-right: 80rem;
 `;
 const ProfileBlock = styled.div`
+    padding-left: 80rem;
     position: relative;
     margin-top: 112rem;
     display: flex;
@@ -120,6 +126,7 @@ const ProfileBlock = styled.div`
     }
 `;
 const ProfileContent = styled.div`
+    padding-left: 80rem;
     width: 1040rem;
     display: flex;
     gap: 136rem;

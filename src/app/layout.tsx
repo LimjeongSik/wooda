@@ -3,6 +3,7 @@ import StyledComponentsRegistry from "@/lib/styledComponents";
 import { GlobalStyle } from "@/styles/GlobalStyle";
 import { Fontspring, Pretendard } from "@/styles/Fonts";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
     title: "Woo-da",
@@ -103,6 +104,7 @@ export default function RootLayout({
                         <GlobalStyle />
                         <Header />
                         {children}
+                        <Footer />
                     </BasicLayout>
                 </StyledComponentsRegistry>
             </body>

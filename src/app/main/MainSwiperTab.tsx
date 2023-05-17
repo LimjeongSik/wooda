@@ -66,6 +66,7 @@ const Block = styled.div`
     align-items: center;
     gap: 36rem;
     padding-bottom: 36rem;
+    padding-left: 220rem;
 `;
 
 const TabButton = styled.button`
@@ -75,6 +76,7 @@ const TabButton = styled.button`
     letter-spacing: -0.38rem;
     color: ${Colors.gray};
     font-family: var(--fontspring);
+    cursor: none;
 
     &.active {
         color: ${Colors.black};
