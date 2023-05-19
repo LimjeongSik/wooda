@@ -1,3 +1,5 @@
+import FullHeightInner from "@/components/Layout/FullHeightInner";
+
 export default function Contact() {
-    return <div>Contact</div>;
+    return <FullHeightInner>Contact</FullHeightInner>;
 }

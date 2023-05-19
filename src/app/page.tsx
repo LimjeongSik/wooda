@@ -5,16 +5,19 @@ import MainTitle from "./main/MainTitle";
 import MainMark from "./main/MainMark";
 import MainProfile from "./main/MainProfile";
 import MainArrow from "./main/MainArrow";
+import FullHeightInner from "@/components/Layout/FullHeightInner";
 
 export default function Main() {
     return (
-        <BlockTemplate styles={{ paddingBottom: "44rem" }}>
-            <MainTitle />
-            <MainMark />
-            <MainProfile />
-            <MainArrow />
-            <MainSwiper />
-            <MainRequest />
-        </BlockTemplate>
+        <FullHeightInner>
+            <BlockTemplate styles={{ paddingBottom: "44rem" }}>
+                <MainTitle />
+                <MainMark />
+                <MainProfile />
+                <MainArrow />
+                <MainSwiper />
+                <MainRequest />
+            </BlockTemplate>
+        </FullHeightInner>
     );
 }

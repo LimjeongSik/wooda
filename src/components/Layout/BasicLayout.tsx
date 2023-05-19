@@ -31,6 +31,8 @@ const Block = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${Colors.white};
+    display: flex;
+    flex-direction: column;
 `;
 const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     (props) => ({
