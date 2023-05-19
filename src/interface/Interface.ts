@@ -5,7 +5,7 @@ export interface ChildProps {
 }
 
 export interface BlockTemplateProps extends ChildProps {
-    styles: {
+    styles?: {
         paddingLeft?: string;
         paddingRight?: string;
         paddingTop?: string;
@@ -35,4 +35,12 @@ export interface ProjectDataProps {
 export interface ProjectContextProps {
     isData: ProjectDataProps[];
     setIsData: React.Dispatch<React.SetStateAction<ProjectDataProps[]>>;
+}
+
+export interface ExperienceDataProps {
+    id: number;
+    date: string;
+    company: string;
+    position: string;
+    explain: string[];
 }

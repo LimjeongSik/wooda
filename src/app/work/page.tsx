@@ -1,3 +1,5 @@
+import FullHeightInner from "@/components/Layout/FullHeightInner";
+
 export default function Work() {
-    return <div>Work</div>;
+    return <FullHeightInner>Work</FullHeightInner>;
 }

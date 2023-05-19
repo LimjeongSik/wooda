@@ -5,7 +5,7 @@ import { Colors } from "@/styles/Colors";
 import { type BlockTemplateProps } from "@/interface/Interface";
 
 interface StylesProps {
-    styles: {
+    styles?: {
         paddingLeft?: string;
         paddingRight?: string;
         paddingTop?: string;
