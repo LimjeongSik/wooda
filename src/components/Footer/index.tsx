@@ -1,36 +1,37 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
 
 import Logo from "/public/images/icons/icon_logo.png";
+import Lorem from "../Lorem";
 
 export default function Footer() {
+    const pathname = usePathname();
+
     return (
-        <FooterBlock>
-            <FooterContents>
-                <div className="flexbox">
-                    <FooterContent>
-                        I’M
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DESIGNS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIMPLE
-                        <br />
-                        DETAILED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND
-                        <br />
-                        WITH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOUR LIFE
-                        <br />
-                        UXUI DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; INSIGHT
-                    </FooterContent>
-                    <FooterContent className="contact">
-                        whh5080@gmail.com
-                        <br />
-                        +82)10-3359-0320
-                    </FooterContent>
-                </div>
-                <FooterContent>From, Korea</FooterContent>
-            </FooterContents>
-            <Image src={Logo} alt="woo-da" />
-        </FooterBlock>
+        <>
+            {pathname === "/contact" ? null : (
+                <FooterBlock>
+                    <FooterContents>
+                        <div className="flexbox">
+                            <FooterContent>
+                                <Lorem />
+                            </FooterContent>
+                            <FooterContent className="contact">
+                                whh5080@gmail.com
+                                <br />
+                                +82)10-3359-0320
+                            </FooterContent>
+                        </div>
+                        <FooterContent>From, Korea</FooterContent>
+                    </FooterContents>
+                    <Image src={Logo} alt="woo-da" />
+                </FooterBlock>
+            )}
+        </>
     );
 }
 
