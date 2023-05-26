@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { throttle } from "lodash";
+import { menu } from "@/data/menu";
 
 import { css, styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
@@ -13,6 +15,7 @@ import Logo from "/public/images/icons/icon_logo.png";
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const beforeScrollY = useRef(0);
+    const pathname = usePathname();
 
     const onScroll = useMemo(
         () =>
@@ -48,9 +51,17 @@ export default function Header() {
                         </Link>
                     </HeaderLogo>
                     <HeaderMenu>
-                        <Link href="/about">About</Link>
-                        <Link href="/work">Work</Link>
-                        <Link href="/contact">Contact</Link>
+                        {menu.map((item) => (
+                            <Link
+                                href={item.href}
+                                key={item.id}
+                                className={
+                                    pathname === item.href ? "active" : ""
+                                }
+                            >
+                                {item.title}
+                            </Link>
+                        ))}
                     </HeaderMenu>
                 </HeaderInner>
             </HeaderBlock>
@@ -99,13 +110,24 @@ const HeaderMenu = styled.div`
     align-items: center;
     gap: 32rem;
     a {
-        height: inherit;
+        position: relative;
         display: flex;
         align-items: center;
         text-decoration: none;
         font-size: 22px;
         color: ${Colors.black};
         font-weight: 500;
+    }
+    a.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: ${Colors.black};
+        cursor: none;
+        pointer-events: none;
     }
 `;
 const HeaderPadding = styled.div`

@@ -44,3 +44,9 @@ export interface ExperienceDataProps {
     position: string;
     explain: string[];
 }
+
+export interface MenuProps {
+    id: number;
+    href: string;
+    title: string;
+}

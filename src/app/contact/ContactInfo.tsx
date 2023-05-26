@@ -52,11 +52,16 @@ const ContactLorem = styled.div`
 `;
 const ContactInfoContents = styled.div`
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
     text-align: right;
+    strong:first-child {
+        width: fit-content;
+        text-align: left;
+    }
     strong {
         font-size: 150rem;
-        font-weight: 200;
+        font-weight: 300;
         font-family: var(--fontspring);
         color: ${Colors.black};
 
