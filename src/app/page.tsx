@@ -6,6 +6,7 @@ import MainMark from "./main/MainMark";
 import MainProfile from "./main/MainProfile";
 import MainArrow from "./main/MainArrow";
 import FullHeightInner from "@/components/Layout/FullHeightInner";
+import { Suspense } from "react";
 
 export default function Main() {
     return (

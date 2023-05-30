@@ -2,15 +2,18 @@
 
 import { styled } from "styled-components";
 import MixTitle from "@/components/Titles/MixTitle";
+import ScrollFadeInUp from "@/components/Animation/ScrollFadeInUp";
 
 export default function MainTitle() {
     return (
         <TitleBlock>
-            <MixTitle
-                title="UXUI DESIG"
-                mixTitle="NER"
-                subTitle="Design Insight."
-            />
+            <ScrollFadeInUp>
+                <MixTitle
+                    title="UXUI DESIG"
+                    mixTitle="NER"
+                    subTitle="Design Insight."
+                />
+            </ScrollFadeInUp>
         </TitleBlock>
     );
 }

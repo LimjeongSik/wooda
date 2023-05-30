@@ -22,6 +22,7 @@ export default function MainRequest() {
                     <br />
                     TO REQUEST.
                 </strong>
+
                 <Image src={Arrow} alt="request" />
             </RequestContent>
         </BlockTemplate>
