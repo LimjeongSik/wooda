@@ -5,20 +5,30 @@ import MainTitle from "./main/MainTitle";
 import MainMark from "./main/MainMark";
 import MainProfile from "./main/MainProfile";
 import MainArrow from "./main/MainArrow";
-import FullHeightInner from "@/components/Layout/FullHeightInner";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Loading from "./loading";
 
 export default function Main() {
+    const FullHeightInnerDynamic = dynamic(
+        () => import("@/components/Layout/FullHeightInner"),
+        {
+            ssr: false,
+            loading: () => <Loading />,
+        },
+    );
+
     return (
-        <FullHeightInner>
-            <BlockTemplate styles={{ paddingBottom: "44rem" }}>
-                <MainTitle />
-                <MainMark />
-                <MainProfile />
-                <MainArrow />
-                <MainSwiper />
-                <MainRequest />
-            </BlockTemplate>
-        </FullHeightInner>
+        <>
+            <FullHeightInnerDynamic>
+                <BlockTemplate styles={{ paddingBottom: "44rem" }}>
+                    <MainTitle />
+                    <MainMark />
+                    <MainProfile />
+                    <MainArrow />
+                    <MainSwiper />
+                    <MainRequest />
+                </BlockTemplate>
+            </FullHeightInnerDynamic>
+        </>
     );
 }

@@ -4,7 +4,7 @@ import BlockTemplate from "@/components/Template/BlockTemplate";
 export default function Loading() {
     return (
         <FullHeightInner>
-            <BlockTemplate>로딩중...</BlockTemplate>;
+            <BlockTemplate>로딩중...</BlockTemplate>
         </FullHeightInner>
     );
 }
