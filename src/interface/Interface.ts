@@ -4,7 +4,8 @@ export interface ChildProps {
     children: React.ReactNode;
 }
 
-export interface BlockTemplateProps extends ChildProps {
+export interface BlockTemplateProps {
+    children: ChildProps | React.ReactNode[];
     styles?: {
         paddingLeft?: string;
         paddingRight?: string;

@@ -17,7 +17,11 @@ export default function BlockTemplate({
     children,
     ...styles
 }: BlockTemplateProps) {
-    return <Block st={styles}>{children}</Block>;
+    return (
+        <Block st={styles}>
+            <>{children}</>
+        </Block>
+    );
 }
 
 const Block = styled.div<{ st: StylesProps }>`

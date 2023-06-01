@@ -12,7 +12,6 @@ export default function Main() {
     const FullHeightInnerDynamic = dynamic(
         () => import("@/components/Layout/FullHeightInner"),
         {
-            ssr: false,
             loading: () => <Loading />,
         },
     );
