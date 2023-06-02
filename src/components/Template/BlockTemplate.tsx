@@ -16,7 +16,7 @@ interface StylesProps {
 export default function BlockTemplate({
     children,
     ...styles
-}: BlockTemplateProps) {
+}: BlockTemplateProps): JSX.Element {
     return (
         <Block st={styles}>
             <>{children}</>

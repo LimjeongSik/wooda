@@ -5,7 +5,7 @@ export interface ChildProps {
 }
 
 export interface BlockTemplateProps {
-    children: ChildProps | React.ReactNode[];
+    children: ChildProps | JSX.Element[];
     styles?: {
         paddingLeft?: string;
         paddingRight?: string;
