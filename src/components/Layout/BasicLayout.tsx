@@ -47,7 +47,8 @@ const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     height: 72rem;
     left: -36rem;
     top: -36rem;
-    border: 3px solid ${Colors.black};
+    border: 3px solid ${Colors.white};
     z-index: 99999;
     pointer-events: none;
+    mix-blend-mode: difference;
 `;

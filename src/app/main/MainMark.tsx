@@ -20,8 +20,8 @@ const MarkBlock = styled.div`
     padding-left: 80rem;
     margin-top: 204rem;
     & > img {
-        width: 66rem;
-        height: 62rem;
+        width: 72rem;
+        height: 68rem;
         margin-bottom: 90rem;
     }
 `;
