@@ -49,4 +49,5 @@ export interface MenuProps {
     id: number;
     href: string;
     title: string;
+    subTitle?: string;
 }

@@ -50,6 +50,13 @@ export default function Header() {
                             />
                         </Link>
                     </HeaderLogo>
+                    {menu.map((item) =>
+                        pathname === item.href ? (
+                            <span key={item.id} className="subtitle">
+                                {item.subTitle}
+                            </span>
+                        ) : null,
+                    )}
                     <HeaderMenu>
                         {menu.map((item) => (
                             <Link
@@ -92,6 +99,12 @@ const HeaderInner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .subtitle {
+        font-size: 18rem;
+        font-weight: 600;
+        color: ${Colors.black};
+    }
 `;
 const HeaderLogo = styled.div`
     height: inherit;
