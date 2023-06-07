@@ -11,7 +11,7 @@ export default function ContactInfo() {
             styles={{
                 paddingLeft: "80rem",
                 paddingRight: "80rem",
-                paddingTop: "146rem",
+                paddingTop: "75rem",
             }}
         >
             <ContactInfoBlock>
@@ -55,6 +55,7 @@ const ContactInfoContents = styled.div`
     align-items: flex-end;
     flex-direction: column;
     text-align: right;
+    margin-top: 115rem;
     strong:first-child {
         width: fit-content;
         text-align: left;
