@@ -7,6 +7,7 @@ import MainProfile from "./main/MainProfile";
 import dynamic from "next/dynamic";
 import Loading from "./loading";
 import MainDumy from "./main/MainDumy";
+import Onepage from "@/components/Layout/Onepage";
 
 export default function Main() {
     const FullHeightInnerDynamic = dynamic(
@@ -20,9 +21,10 @@ export default function Main() {
         <>
             <FullHeightInnerDynamic>
                 <BlockTemplate styles={{ paddingBottom: "44rem" }}>
-                    <MainTitle />
+                    <Onepage />
+                    {/* <MainTitle />
                     <MainMark />
-                    <MainProfile />
+                    <MainProfile /> */}
                     <MainDumy />
                     <MainSwiper />
                     <MainRequest />
