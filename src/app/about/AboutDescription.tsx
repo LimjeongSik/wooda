@@ -8,10 +8,9 @@ export default function AboutDescription() {
     return (
         <BlockTemplate
             styles={{
-                paddingLeft: "480rem",
-                paddingRight: "427rem",
-                paddingTop: "258rem",
-                paddingBottom: "276rem",
+                paddingLeft: "428rem",
+                paddingTop: "106rem",
+                paddingBottom: "260rem",
             }}
         >
             <DescriptionBlock>
@@ -52,7 +51,6 @@ export default function AboutDescription() {
 const DescriptionBlock = styled.div`
     display: flex;
     align-items: flex-start;
-    gap: 132rem;
     strong {
         font-size: 20rem;
         color: ${Colors.black};
@@ -61,9 +59,11 @@ const DescriptionBlock = styled.div`
         white-space: nowrap;
     }
     span {
+        width: 836rem;
         font-size: 17rem;
         color: ${Colors.black};
         font-weight: 300;
         line-height: 1.6;
+        margin-top: 124rem;
     }
 `;

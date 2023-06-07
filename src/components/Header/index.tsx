@@ -77,7 +77,6 @@ const HeaderBlock = styled.div<{ $os: boolean }>`
     width: 100%;
     height: 105px;
     padding: 0 80rem;
-    background-color: ${Colors.white};
     z-index: 9999;
     transition: all 0.2s ease-in-out;
 

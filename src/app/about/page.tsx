@@ -1,18 +1,14 @@
 import FullHeightInner from "@/components/Layout/FullHeightInner";
-import AboutTitle from "./AboutTitle";
+import AboutProfile from "./AboutProfile";
 import AboutDescription from "./AboutDescription";
-import AboutAbility from "./AboutAbility";
-import AboutExperience from "./AboutExperience";
-import AboutContact from "./AboutContact";
+import AboutEnd from "./AboutEnd";
 
 export default function About() {
     return (
         <FullHeightInner>
-            <AboutTitle />
+            <AboutProfile />
             <AboutDescription />
-            <AboutAbility />
-            <AboutExperience />
-            <AboutContact />
+            <AboutEnd />
         </FullHeightInner>
     );
 }

@@ -1,24 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import BlockTemplate from "@/components/Template/BlockTemplate";
+import { Colors } from "@/styles/Colors";
 import { styled } from "styled-components";
 
-import AboutBg from "/public/images/bg/bg_about.png";
-import Image from "next/image";
-import { Colors } from "@/styles/Colors";
+import Profile from "/public/images/bg/bg_profile2.png";
 
-export default function AboutAbility() {
+export default function AboutProfile() {
     return (
         <BlockTemplate
-            styles={{ paddingLeft: "80rem", paddingBottom: "360rem" }}
+            styles={{
+                paddingLeft: "124rem",
+                paddingRight: "124rem",
+                paddingTop: "35rem",
+            }}
         >
-            <AbilityBlock>
-                <Image
-                    src={AboutBg}
-                    width={826}
-                    height={730}
-                    alt="about ability"
-                />
+            <AboutProfileTitles>
+                <span>Hello I</span>’m Hyunhwa Woo <span>Desig</span>ner
+            </AboutProfileTitles>
+            <AboutProfileContent>
+                <Image src={Profile} alt="profile" width={628} height={838} />
                 <MyAbility>
                     <AbilityList>
                         <h3>UXUI,Graphic Designer</h3>
@@ -57,30 +59,47 @@ export default function AboutAbility() {
                         </p>
                     </AbilityList>
                 </MyAbility>
-            </AbilityBlock>
+            </AboutProfileContent>
         </BlockTemplate>
     );
 }
 
-const AbilityBlock = styled.div`
+const AboutProfileTitles = styled.h1`
+    position: relative;
+    font-size: 200rem;
+    letter-spacing: -1px;
+    color: ${Colors.baseWhite};
+    font-weight: 400;
+    text-align: center;
+    line-height: 1;
+    span {
+        font-family: var(--fontspring);
+    }
+    z-index: 100;
+    mix-blend-mode: difference;
+`;
+const AboutProfileContent = styled.div`
+    width: 100%;
     display: flex;
-    align-items: center;
-    gap: 140rem;
+    align-items: flex-start;
+    gap: 94rem;
+    padding-left: 174rem;
+    margin-top: -73rem;
     img {
-        width: 826rem;
-        height: 730rem;
+        width: 623rem;
+        height: 838rem;
     }
 `;
 const MyAbility = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 80rem;
+    gap: 82rem;
+    margin-top: 310rem;
 `;
 const AbilityList = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20rem;
-
+    gap: 18rem;
     h3 {
         font-size: 20rem;
         color: ${Colors.black};
