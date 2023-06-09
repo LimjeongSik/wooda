@@ -1,12 +1,15 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { Colors } from "@/styles/Colors";
 
 import { ChildProps, MouseMoveEventProsp } from "@/interface/Interface";
+import FullWidthCheckModal from "../Modal/FullWidthCheckModal";
 
 export default function BasicLayout({ children }: ChildProps) {
+    const [fullWidth, setFullWidth] = useState<boolean>(true);
+
     const [mousePosition, setMousePosition] = useState<MouseMoveEventProsp>({
         x: 0,
         y: 0,
@@ -19,11 +22,33 @@ export default function BasicLayout({ children }: ChildProps) {
         setMousePosition({ x: mouseX, y: mouseY });
     }, []);
 
+    const onFullWidthCheck = useCallback(() => {
+        if (window.innerWidth < 1400) {
+            setFullWidth(false);
+        } else {
+            setFullWidth(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        onFullWidthCheck();
+        window.addEventListener("resize", onFullWidthCheck);
+        return () => {
+            window.removeEventListener("resize", onFullWidthCheck);
+        };
+    }, [onFullWidthCheck]);
+
     return (
-        <Block onMouseMove={onMouseMove}>
-            <MousePointer move={mousePosition} />
-            {children}
-        </Block>
+        <>
+            {fullWidth ? (
+                <Block onMouseMove={onMouseMove}>
+                    <MousePointer move={mousePosition} />
+                    {children}
+                </Block>
+            ) : (
+                <FullWidthCheckModal />
+            )}
+        </>
     );
 }
 
