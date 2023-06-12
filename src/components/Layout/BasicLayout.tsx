@@ -79,5 +79,5 @@ const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     mix-blend-mode: difference;
     transform-style: preserve-3d;
     transition-timing-function: linear;
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
 `;
