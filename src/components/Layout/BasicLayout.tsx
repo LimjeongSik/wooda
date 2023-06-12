@@ -66,6 +66,7 @@ const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
         },
     }),
 )`
+    will-change: transform;
     position: fixed;
     border-radius: 50%;
     width: 72rem;
@@ -76,4 +77,5 @@ const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     z-index: 99999;
     pointer-events: none;
     mix-blend-mode: difference;
+    transition-duration: 0.5s;
 `;
