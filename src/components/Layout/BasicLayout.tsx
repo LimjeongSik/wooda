@@ -62,7 +62,7 @@ const Block = styled.div`
 const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     (props) => ({
         style: {
-            transform: `translate(${props.move.x}px, ${props.move.y}px)`,
+            transform: `translate3d(${props.move.x}px, ${props.move.y}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
         },
     }),
 )`
@@ -77,5 +77,7 @@ const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
     z-index: 99999;
     pointer-events: none;
     mix-blend-mode: difference;
-    transition-duration: 0.5s;
+    transform-style: preserve-3d;
+    transition-timing-function: linear;
+    transition-duration: 0.35s;
 `;
