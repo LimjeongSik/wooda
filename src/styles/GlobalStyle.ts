@@ -41,10 +41,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: var(--pretendard);
+	font-family: var(--pretendard),sans-serif;
 }
 .fontspring {
-	font-family: var(--fontspring);
+	font-family: var(--fontspring),sans-serif;
 }
 ol, ul {
 	list-style: none;
