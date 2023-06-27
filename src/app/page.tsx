@@ -15,15 +15,13 @@ export default function Main() {
     );
 
     return (
-        <>
-            <FullHeightInnerDynamic>
-                <BlockTemplate styles={{ paddingBottom: "44rem" }}>
-                    <Onepage />
-                    <MainDumy />
-                    <MainSwiper />
-                    <MainRequest />
-                </BlockTemplate>
-            </FullHeightInnerDynamic>
-        </>
+        <FullHeightInnerDynamic>
+            <BlockTemplate styles={{ paddingBottom: "44rem" }}>
+                <Onepage />
+                <MainDumy />
+                <MainSwiper />
+                <MainRequest />
+            </BlockTemplate>
+        </FullHeightInnerDynamic>
     );
 }
