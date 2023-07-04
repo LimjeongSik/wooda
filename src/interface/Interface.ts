@@ -10,6 +10,7 @@ export interface BlockTemplateProps extends ChildProps {
         paddingRight?: string;
         paddingTop?: string;
         paddingBottom?: string;
+        height?: string;
     };
 }
 
