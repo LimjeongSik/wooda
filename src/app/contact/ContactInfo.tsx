@@ -42,7 +42,7 @@ const ContactInfoBlock = styled.div`
     position: relative;
     display: flex;
     justify-content: flex-end;
-    height: calc(100% - 108rem);
+    height: 100%;
 `;
 const ContactLorem = styled.div`
     position: absolute;
@@ -55,7 +55,7 @@ const ContactLorem = styled.div`
 const ContactInfoContents = styled.div`
     position: absolute;
     right: 0;
-    top: 50%;
+    top: calc(50% - 108rem);
     transform: translateY(-50%);
     display: flex;
     align-items: flex-end;
