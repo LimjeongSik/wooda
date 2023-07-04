@@ -16,6 +16,8 @@ export default function MainMark() {
 }
 
 const MarkBlock = styled.div`
+    position: relative;
+    z-index: 100;
     padding-left: 80rem;
     margin-top: 204rem;
     & > img {
