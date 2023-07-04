@@ -32,7 +32,7 @@ const Block = styled.div`
 
 const MainProfilePosition = styled.div`
     position: absolute;
-    top: 720rem;
+    bottom: -620rem;
     width: 100%;
     padding-top: 20rem;
 `;
