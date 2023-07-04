@@ -47,7 +47,7 @@ const ContactInfoBlock = styled.div`
 const ContactLorem = styled.div`
     position: absolute;
     left: 0;
-    top: 30rem;
+    top: 0;
     & > div {
         font-size: 18rem;
     }
