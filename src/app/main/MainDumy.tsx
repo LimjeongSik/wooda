@@ -15,8 +15,8 @@ export default function MainDumy() {
         <Block>
             <BlockTemplate
                 styles={{
-                    paddingTop: "770rem",
-                    paddingBottom: "200rem",
+                    paddingTop: "790rem",
+                    paddingBottom: "240rem",
                     paddingLeft: "80rem",
                     paddingRight: "80rem",
                 }}

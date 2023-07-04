@@ -9,11 +9,11 @@ export default function ScrollTransformRight({ children }: ChildProps) {
     });
 
     const x = useTransform(scrollYProgress, [1, 0.7], [150, 0]);
-    const opacity = useTransform(scrollYProgress, [1, 0.7], [0, 1]);
+    // const opacity = useTransform(scrollYProgress, [1, 0.7], [0, 1]);
 
     return (
         <div ref={ref}>
-            <motion.div style={{ x, opacity }}>{children}</motion.div>
+            <motion.div style={{ x }}>{children}</motion.div>
         </div>
     );
 }

@@ -11,7 +11,7 @@ export default function AboutEnd() {
             styles={{
                 paddingLeft: "200rem",
                 paddingRight: "200rem",
-                paddingBottom: "180rem",
+                paddingBottom: "160rem",
             }}
         >
             <Block>

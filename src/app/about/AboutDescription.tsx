@@ -10,16 +10,14 @@ export default function AboutDescription() {
             styles={{
                 paddingLeft: "428rem",
                 paddingTop: "106rem",
-                paddingBottom: "260rem",
+                paddingBottom: "240rem",
             }}
         >
             <DescriptionBlock>
                 <strong>
-                    for Design
+                    for Design with Design
                     <br />
-                    with Design
-                    <br />
-                    from Design
+                    from Ui/UX Design
                 </strong>
                 <span>
                     저는 UI/UX분석을 기반으로 사용자 중심의 디자인을 중요하게
@@ -28,7 +26,7 @@ export default function AboutDescription() {
                     디자인합니다.
                     <br />
                     <br />
-                    또한, 디자인 시안 작성 및 개선을 통해 더욱 직관적이고 깔끔한
+                    디자인 시안 작성 및 개선을 통해 더욱 직관적이고 깔끔한
                     디자인을 제공할 수 있습니다. 사용자 인터페이스(UI) 및 사용자
                     경험(UX) 디자인을 개발하고 프로토타입을 제작하여, 사용자
                     피드백을 수집하며 더욱 완성도 높은 디자인을 만들어냅니다.
@@ -39,9 +37,10 @@ export default function AboutDescription() {
                     이해와 프로토타입 제작 경험을 가지고 있습니다.
                     <br />
                     <br />
-                    노션, 슬랙을 사용하여 프로젝트 관리 및 협업을
-                    진행해왔습니다. 협업 과정에서, 팀원들과 소통하며 프로젝트를
-                    성공적으로 마무리하는 것을 목표로 하고 있습니다.
+                    다양한 프로젝트에서 팀원들과의 협업을 통해 문제 해결과
+                    디자인 구현 능력을 향상시켰습니다. UI/UX 디자인 트렌드와
+                    기술을 항상 주시하며, 학습과 성장에 주도적으로 참여하는 것을
+                    좋아합니다.
                 </span>
             </DescriptionBlock>
         </BlockTemplate>
@@ -50,12 +49,14 @@ export default function AboutDescription() {
 
 const DescriptionBlock = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 47rem;
     strong {
         font-size: 20rem;
         color: ${Colors.black};
         font-weight: 500;
-        line-height: 1.2;
+        line-height: 1.4;
         white-space: nowrap;
     }
     span {
@@ -64,6 +65,6 @@ const DescriptionBlock = styled.div`
         color: ${Colors.black};
         font-weight: 300;
         line-height: 1.6;
-        margin-top: 124rem;
+        margin-left: 80rem;
     }
 `;

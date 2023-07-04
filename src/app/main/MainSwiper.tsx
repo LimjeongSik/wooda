@@ -56,7 +56,7 @@ export default function MainSwiper() {
 }
 
 const Block = styled.div`
-    padding-bottom: 240rem;
+    padding-bottom: 220rem;
     .mySwiper {
         padding-left: 220rem;
         padding-bottom: 144rem;

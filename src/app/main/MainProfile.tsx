@@ -20,7 +20,7 @@ export default function MainProfile() {
                     mixTitle="IO"
                     classname="absolute-block"
                 />
-                <Image src={Profile} width={300} height={300} alt="profile" />
+                <Image src={Profile} alt="profile" />
                 <ProfileContent>
                     <div className="left-column">
                         <strong>for Design</strong>
@@ -30,12 +30,18 @@ export default function MainProfile() {
                     <div className="right-column">
                         <h2>UXUI,Graphic Designer</h2>
                         <span>
-                            안녕하세요 난 우다에요 웹사이트 디자이너. 이해하고
-                            철학을 만드는 디자인은 사용자에게 보다 풍부한 경험과
-                            보다 심플한 메시지를 줄 수 있습니다. 온전히
-                            웹서비스에 담아낼 수 있도록 노력합니다. 어쩌구
-                            저쩌구 저를 소개할 수 있는말이 무엇일까요 나는
-                            킹왕짱입니다. 저를 사용하십시오.
+                            저는 창의성과 디자인 열정을 가지고 있으며, 사용자
+                            중심의 웹 디자인을 통해 사용자들에게 최상의 경험을
+                            제공하기를 원합니다.
+                            <br />
+                            시각적인 요소와 사용자 인터페이스를 조화롭게
+                            결합하여 직관적이고
+                            <br /> 사용하기 쉬운 디자인을 만들기 위해 노력하고
+                            있으며, 끊임없이 발전하고
+                            <br /> 성장하는 디자이너로서 저의 역량을 바탕으로 웹
+                            디자인 프로젝트에 기여하고,
+                            <br /> 사용자들에게 즐거운 웹 경험을 제공하도록
+                            합니다.
                         </span>
                         <Link href="/about">About me</Link>
                     </div>
@@ -89,7 +95,7 @@ const ProfileContent = styled.div`
             font-weight: 500;
         }
         span {
-            max-width: 581rem;
+            max-width: 509rem;
             font-size: 17rem;
             line-height: 1.5;
             color: ${Colors.black};
@@ -98,9 +104,25 @@ const ProfileContent = styled.div`
             margin-bottom: 44rem;
         }
         a {
+            width: fit-content;
+            position: relative;
             font-size: 20rem;
             color: ${Colors.black};
             font-family: var(--fontspring);
+            text-decoration: none;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2rem;
+                width: 100%;
+                height: 1px;
+                background-color: ${Colors.black};
+                transition: width 0.3s ease-in-out;
+            }
+        }
+        a:hover::before {
+            width: 0%;
         }
     }
 `;

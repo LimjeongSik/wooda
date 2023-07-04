@@ -30,7 +30,7 @@ export default function ContactInfo() {
                 </ContactInfoContents>
             </ContactInfoBlock>
             <ContactInfoContentsItem>
-                <strong>UX/UI DESIGNER</strong>
+                <strong>W-D® UX/UI DESIGNER</strong>
                 <strong>©2023 Copyright - WooDa</strong>
             </ContactInfoContentsItem>
         </BlockTemplate>

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Colors } from "@/styles/Colors";
 import { styled } from "styled-components";
 
 import Mark from "/public/images/icons/icon_mark.png";
@@ -22,6 +21,6 @@ const MarkBlock = styled.div`
     & > img {
         width: 72rem;
         height: 68rem;
-        margin-bottom: 90rem;
+        margin-bottom: 72rem;
     }
 `;

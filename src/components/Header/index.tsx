@@ -101,6 +101,10 @@ const HeaderInner = styled.div`
     justify-content: space-between;
 
     .subtitle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         font-size: 18rem;
         font-weight: 600;
         color: ${Colors.black};
