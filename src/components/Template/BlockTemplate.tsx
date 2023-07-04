@@ -10,6 +10,7 @@ interface StylesProps {
         paddingRight?: string;
         paddingTop?: string;
         paddingBottom?: string;
+        height?: string;
     };
 }
 
@@ -21,7 +22,9 @@ export default function BlockTemplate({
 }
 
 const Block = styled.div<{ st: StylesProps }>`
+    position: relative;
     width: 100%;
+    height: ${(props) => props.st.styles?.height};
     background-color: ${Colors.white};
     padding-left: ${(props) => props.st.styles?.paddingLeft};
     padding-right: ${(props) => props.st.styles?.paddingRight};

@@ -12,6 +12,7 @@ export default function ContactInfo() {
                 paddingLeft: "80rem",
                 paddingRight: "80rem",
                 paddingTop: "75rem",
+                height: "100%",
             }}
         >
             <ContactInfoBlock>
@@ -41,6 +42,7 @@ const ContactInfoBlock = styled.div`
     position: relative;
     display: flex;
     justify-content: flex-end;
+    height: calc(100% - 108rem);
 `;
 const ContactLorem = styled.div`
     position: absolute;
@@ -51,11 +53,14 @@ const ContactLorem = styled.div`
     }
 `;
 const ContactInfoContents = styled.div`
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     text-align: right;
-    margin-top: 115rem;
     strong:first-child {
         width: fit-content;
         text-align: left;
@@ -74,12 +79,13 @@ const ContactInfoContents = styled.div`
 const ContactInfoContentsItem = styled.div`
     position: fixed;
     left: 0;
-    bottom: 54rem;
+    bottom: 0;
     width: 100%;
+    height: 108rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 0 80rem;
-
     strong {
         font-size: 18rem;
         color: ${Colors.black};
