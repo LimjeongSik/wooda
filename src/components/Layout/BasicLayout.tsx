@@ -9,6 +9,7 @@ import FullWidthCheckModal from "../Modal/FullWidthCheckModal";
 
 export default function BasicLayout({ children }: ChildProps) {
     const [fullWidth, setFullWidth] = useState<boolean>(true);
+    const [isUpDown, setIsUpDown] = useState<boolean>(false);
 
     const [mousePosition, setMousePosition] = useState<MouseMoveEventProsp>({
         x: 0,
@@ -30,19 +31,37 @@ export default function BasicLayout({ children }: ChildProps) {
         }
     }, []);
 
+    const isMouseDown = useCallback(() => {
+        setIsUpDown(true);
+    }, []);
+    const isMouseUp = useCallback(() => {
+        setTimeout(() => {
+            setIsUpDown(false);
+        }, 300);
+    }, []);
+
     useEffect(() => {
         onFullWidthCheck();
+        isMouseDown();
+        isMouseUp();
         window.addEventListener("resize", onFullWidthCheck);
         return () => {
             window.removeEventListener("resize", onFullWidthCheck);
+            onFullWidthCheck();
+            isMouseDown();
+            isMouseUp();
         };
-    }, [onFullWidthCheck]);
+    }, [isMouseDown, isMouseUp, onFullWidthCheck]);
 
     return (
         <>
             {fullWidth ? (
-                <Block onMouseMove={onMouseMove}>
-                    <MousePointer move={mousePosition} />
+                <Block
+                    onMouseMove={onMouseMove}
+                    onMouseDown={isMouseDown}
+                    onMouseUp={isMouseUp}
+                >
+                    <MousePointer move={mousePosition} $mouse={isUpDown} />
                     {children}
                 </Block>
             ) : (
@@ -59,13 +78,16 @@ const Block = styled.div`
     display: flex;
     flex-direction: column;
 `;
-const MousePointer = styled.div.attrs<{ move: MouseMoveEventProsp }>(
-    (props) => ({
-        style: {
-            transform: `translate3d(${props.move.x}px, ${props.move.y}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-        },
-    }),
-)`
+const MousePointer = styled.div.attrs<{
+    move: MouseMoveEventProsp;
+    $mouse: boolean;
+}>((props) => ({
+    style: {
+        transform: `translate3d(${props.move.x}px, ${props.move.y}px, 0px) ${
+            props.$mouse ? "scale3d(0.8, 0.8, 0.8)" : "scale3d(1, 1, 1)"
+        } rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+    },
+}))`
     will-change: transform;
     position: fixed;
     border-radius: 50%;

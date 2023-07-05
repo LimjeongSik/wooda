@@ -1,11 +1,9 @@
 "use client";
 
 import { styled } from "styled-components";
-import Image from "next/image";
-
-import Arrow from "/public/images/icons/icon_fill_arrow.png";
 import { Colors } from "@/styles/Colors";
 import BlockTemplate from "@/components/Template/BlockTemplate";
+import ScrollArrowSvg from "@/components/Animation/ScrollArrowSvg";
 
 export default function MainRequest() {
     return (
@@ -22,8 +20,7 @@ export default function MainRequest() {
                     <br />
                     TO REQUEST.
                 </strong>
-
-                <Image src={Arrow} alt="request" />
+                <ScrollArrowSvg />
             </RequestContent>
         </BlockTemplate>
     );
@@ -39,7 +36,8 @@ const RequestContent = styled.div`
         font-family: var(--fontspring);
         text-align: right;
     }
-    img {
+
+    svg {
         width: 460rem;
         height: 263rem;
         margin-left: 567rem;

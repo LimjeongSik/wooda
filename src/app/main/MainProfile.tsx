@@ -58,6 +58,7 @@ const ProfileBlock = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
     .absolute-block {
         position: absolute;
         top: -172rem;
