@@ -1,6 +1,6 @@
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChildProps } from "@/interface/Interface";
-import { useRef } from "react";
 
 export default function ScrollTransformRight({ children }: ChildProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -8,7 +8,7 @@ export default function ScrollTransformRight({ children }: ChildProps) {
         target: ref,
     });
 
-    const x = useTransform(scrollYProgress, [1, 0.7], [150, 0]);
+    const x = useTransform(scrollYProgress, [1, 0.7], [300, 0]);
     // const opacity = useTransform(scrollYProgress, [1, 0.7], [0, 1]);
 
     return (
