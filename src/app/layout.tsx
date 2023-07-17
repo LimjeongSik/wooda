@@ -1,5 +1,5 @@
 import BasicLayout from "@/components/Layout/BasicLayout";
-import StyledComponentsRegistry from "@/lib/styledComponents";
+import StyledComponentsRegistry from "@/lib/styledRegistry";
 import { GlobalStyle } from "@/styles/GlobalStyle";
 import { Fontspring, Pretendard } from "@/styles/Fonts";
 import Header from "@/components/Header";
@@ -100,8 +100,8 @@ export default function RootLayout({
             </head>
             <body>
                 <StyledComponentsRegistry>
-                    <GlobalStyle />
                     <BasicLayout>
+                        <GlobalStyle />
                         <Header />
                         {children}
                         <Footer />
