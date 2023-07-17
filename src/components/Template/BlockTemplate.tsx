@@ -18,16 +18,16 @@ export default function BlockTemplate({
     children,
     ...styles
 }: BlockTemplateProps) {
-    return <Block st={styles}>{children}</Block>;
+    return <Block $st={styles}>{children}</Block>;
 }
 
-const Block = styled.div<{ st: StylesProps }>`
+const Block = styled.div<{ $st: StylesProps }>`
     position: relative;
     width: 100%;
-    height: ${(props) => props.st.styles?.height};
+    height: ${(props) => props.$st.styles?.height};
     background-color: ${Colors.white};
-    padding-left: ${(props) => props.st.styles?.paddingLeft};
-    padding-right: ${(props) => props.st.styles?.paddingRight};
-    padding-top: ${(props) => props.st.styles?.paddingTop};
-    padding-bottom: ${(props) => props.st.styles?.paddingBottom};
+    padding-left: ${(props) => props.$st.styles?.paddingLeft};
+    padding-right: ${(props) => props.$st.styles?.paddingRight};
+    padding-top: ${(props) => props.$st.styles?.paddingTop};
+    padding-bottom: ${(props) => props.$st.styles?.paddingBottom};
 `;

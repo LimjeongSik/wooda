@@ -1,9 +1,9 @@
-import MainSwiper from "./main/MainSwiper";
-import MainRequest from "./main/MainRequest";
+import MainSwiper from "./MainSwiper";
+import MainRequest from "./MainRequest";
 import BlockTemplate from "@/components/Template/BlockTemplate";
 import dynamic from "next/dynamic";
-import Loading from "./loading";
-import MainDumy from "./main/MainDumy";
+import Loading from "../loading";
+import MainDumy from "./MainDumy";
 import Onepage from "@/components/Layout/Onepage";
 
 export default function Main() {

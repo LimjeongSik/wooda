@@ -61,7 +61,7 @@ export default function BasicLayout({ children }: ChildProps) {
                     onMouseDown={isMouseDown}
                     onMouseUp={isMouseUp}
                 >
-                    <MousePointer move={mousePosition} $mouse={isUpDown} />
+                    <MousePointer $move={mousePosition} $mouse={isUpDown} />
                     {children}
                 </Block>
             ) : (
@@ -79,11 +79,11 @@ const Block = styled.div`
     flex-direction: column;
 `;
 const MousePointer = styled.div.attrs<{
-    move: MouseMoveEventProsp;
+    $move: MouseMoveEventProsp;
     $mouse: boolean;
 }>((props) => ({
     style: {
-        transform: `translate3d(${props.move.x}px, ${props.move.y}px, 0px) ${
+        transform: `translate3d(${props.$move.x}px, ${props.$move.y}px, 0px) ${
             props.$mouse ? "scale3d(0.8, 0.8, 0.8)" : "scale3d(1, 1, 1)"
         } rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
     },

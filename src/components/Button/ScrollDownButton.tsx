@@ -18,7 +18,7 @@ interface Props {
 
 export default function ScrollDownButton({ scrollDownEvent, styles }: Props) {
     return (
-        <Block st={{ styles }}>
+        <Block $st={{ styles }}>
             <ButtonBlock>
                 <Image
                     src={ScrollDownTxt}
@@ -40,12 +40,12 @@ export default function ScrollDownButton({ scrollDownEvent, styles }: Props) {
     );
 }
 
-const Block = styled.div<{ st: Props }>`
-    position: ${(props) => props.st.styles?.position};
-    bottom: ${(props) => props.st.styles?.bottom};
-    left: ${(props) => props.st.styles?.left};
-    right: ${(props) => props.st.styles?.right};
-    top: ${(props) => props.st.styles?.top};
+const Block = styled.div<{ $st: Props }>`
+    position: ${(props) => props.$st.styles?.position};
+    bottom: ${(props) => props.$st.styles?.bottom};
+    left: ${(props) => props.$st.styles?.left};
+    right: ${(props) => props.$st.styles?.right};
+    top: ${(props) => props.$st.styles?.top};
 `;
 const ButtonBlock = styled.div`
     position: relative;
