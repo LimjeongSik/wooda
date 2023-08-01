@@ -20,13 +20,13 @@ export const project = [
     {
         id: 3,
         name: "Tripsia",
-        classification: "Mobile APP",
+        classification: "📱Mobile App",
         image: Tripsia,
     },
     {
         id: 4,
         name: "Mogwaplay",
-        classification: "Web Design",
+        classification: "🖥Web Design",
         image: Mogwaplay,
     },
     {

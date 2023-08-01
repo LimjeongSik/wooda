@@ -11,7 +11,7 @@ export const menu: MenuProps[] = [
         id: 2,
         href: "/project",
         title: "Project",
-        subTitle: "Experience",
+        subTitle: "eXperience",
     },
     {
         id: 3,
