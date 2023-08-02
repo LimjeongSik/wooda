@@ -8,6 +8,7 @@ import { ProjectTabContext } from "@/context/ProjectContext";
 
 export default function ProjectTabButton() {
     const { isData, setIsData } = useContext(ProjectTabContext);
+
     return (
         <BlockTemplate
             styles={{
@@ -15,9 +16,18 @@ export default function ProjectTabButton() {
             }}
         >
             <ButtonBlock>
-                {isData.map((item) => (
-                    <TabButton key={item.id}>{item.classification}</TabButton>
-                ))}
+                <TabButton>🖌All Design</TabButton>
+                {isData
+                    .map((data) => data.classification)
+                    .filter(
+                        (item, index) =>
+                            isData
+                                .map((item) => item.classification)
+                                .indexOf(item) === index,
+                    )
+                    .map((value, index) => (
+                        <TabButton key={index}>{value}</TabButton>
+                    ))}
             </ButtonBlock>
         </BlockTemplate>
     );
